@@ -1,4 +1,5 @@
 # E1-1_내 컴퓨터에서 개발자용 '작업실' 꾸미기
+# 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다!
 <!------------------------------------ 구분선 ------------------------------------>
 
 ## 1. 프로젝트 개요 (미션 목표 요약)
@@ -57,21 +58,21 @@
 | 2️⃣ | 스테이징 영역 | `git add .` | 변경사항 준비 |</br>
 | 3️⃣ | 로컬 리포지토리 | `git commit -m` | 스냅샷 저장 |</br>
 | 4️⃣ | 원격 리포지토리 | `git push` | GitHub 업로드 |</br>
-- ![alt text](images/image.png)
+- ![alt text](docs/images/image.png)
 
 ### 4. GitHub
 - [v] GitHub 로그인 및 과제용 원격 저장소(Repository) 생성
 - [v] `git remote add origin <저장소 URL>` 원격 저장소 연동
 - [v] `git push -u origin main` 성공 확인
 - [v] VSCode와 GitHub 계정 연동 상태 확인 (스크린샷 첨부)
-![alt text](images/image2.png)
+![alt text](docs/images/image2.png)
 - [v] 비밀번호, 토큰 등 민감한 개인정보 마스킹 처리 여부 점검
 
 ### 5. 권한 (Permission)
 - [v] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
-![alt text](images/image3.png)
+![alt text](docs/images/image3.png)
 - [v] `chmod` 권한 변경 실습
-![alt text](images/image4.png)
+![alt text](docs/images/image4.png)
 - [v] 권한 표기법(755, 644 등)의 숫자별 의미 정리
     - r (read)    = 4
     - w (write)   = 2
@@ -112,38 +113,16 @@
     - RUN apt update
     - CMD ["bash"] (해당 컨테이너를 실행할 때 먼저 실행할 앱)
 
-### 10. Example for Docker-compose Folder Tree 
+### 10. Folder Tree 
 ```
-my-project/
-├── docker-compose.yml
-├── .env
-├── .gitignore
-├── README.md
-│
-├── backend/
-│   ├── Dockerfile
-│   ├── .dockerignore
-│   ├── requirements.txt          # Python 예시
-│   ├── package.json              # Node 예시라면 사용
-│   ├── src/
-│   │   ├── main.py               # 또는 app.py / server.js
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── models/
-│   └── tests/
-│
-├── nginx/
-│   ├── default.conf
-│   └── Dockerfile                # 선택사항(공식 이미지 그대로 쓰면 없어도 됨)
-│
-├── db/
-│   ├── init/
-│   │   └── init.sql
-│   └── data/                     # 로컬 개발용, 보통 git에는 제외
-│
-└── logs/
-    ├── nginx/
-    └── backend/
+Codyssey_1-1/
+├── app/
+│   └── index.html          # 커스텀 웹페이지 (HTML)
+├── docs/
+│   └── images/             # 포트 접속 브라우저/VSCode 연동 캡처 이미지
+├── Dockerfile              # NGINX 베이스 커스텀 이미지 빌드 파일
+├── .gitignore              # 민감정보 및 불필요 파일 제외
+└── README.md               # 최종 제출용 기술 문서
 ```
 
 <!------------------------------------ 구분선 ------------------------------------>
@@ -155,6 +134,3 @@ my-project/
 
 <!------------------------------------ 구분선 ------------------------------------>
 ## 5. 트러블슈팅 2건 이상 (문제 → 원인 가설 → 확인 → 해결/대안)
-
-<!------------------------------------ 구분선 ------------------------------------>
-## 6. 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다.
