@@ -1,4 +1,5 @@
 FROM ubuntu:24.04
+# 우분투 24.04 기반의 커스텀 이미지 생성
 
 # Custom image based on Linux base image + basic runtime features
 ENV APP_PORT=8080

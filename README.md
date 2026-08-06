@@ -1,6 +1,17 @@
-# Codyssey Custom Docker Image
+# E1-1_내 컴퓨터에서 개발자용 '작업실' 꾸미기
 
-## 1. 프로젝트 개요(미션 목표 요약)
+## 1. 프로젝트 개요 (미션 목표 요약)
+- 개발 워크스테이션은 팀원 누구나 같은 방식으로 실행, 배포, 디버깅할 수 있는 환경 구성을 목표로 한다.
+- 이 과정에서 핵심 도구인 리눅스 CLI(터미널), Docker(컨테이너), Git/GitHub(버전 관리 및 협업)를 함께 사용할 수 있다.
+    - 터미널로 작업 디렉토리의 권한 설정할 수 있다.
+    - Docker를 설치 및 점검하고 컨테이너를 실행/관리할 수 있다.
+    - 간단한 웹 서버를 Dockerfile로 컨테이너화하고, 포트 매핑을 접속을 확인하며, 바인드 마운트/볼륨으로 "변경 반영"과 "데이터 영속성"을 직접 검증한다.
+    - 실행 결과(로그/접속/데이터 유지)로 핵심 흐름을 확인한다.
+    - 이미지와 컨테이너의 분리, 격리된 실행 환경, 포트 및 스토리지 연결 방식의 설계가 왜 필요한지 설명 가능한 형태로 정리한다.
+- 같은 서비스를 여러 번 실행해도 재현할 수 있는 원리를 익힌다.
+- **해당 경험들을 통해 리눅스 트러블 슈팅, CI/CD 파이프라인, 클라우드 배포/운영 등으로 기술 확장할 수 있다.**
+
+## 2. 실행 환경 (OS/쉘/터미널, Docker 버전, Git 버전)
 
 - 선택: (B) Linux 베이스 이미지 + 기능 추가
 - 베이스: ubuntu:24.04
@@ -9,22 +20,39 @@
 - 환경 변수: APP_PORT, APP_MESSAGE
 - Docker HEALTHCHECK 추가
 
-## 2. 실행 환경(OS/쉘/터미널, Docker 버전, Git 버전)
+## 3. 수행 항목 체크리스트 (터미널/권한/Docker/Dockerfile/포트/Git/GitHub)
+
+    ### 1. Terminal
 
 
-## 3. 수행 항목 체크리스트(터미널/권한/Docker/Dockerfile/포트/Git/GitHub)
+    ### 2. Git
 
-1. docker build -t codyssey-custom:latest .
-2. docker run --rm -p 8080:8080 codyssey-custom:latest
-3. curl http://localhost:8080
 
-## 4. 검증 방법(어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
+    ### 3. GitHub
+
+
+    ### 4. 권한
+
+
+    ### 5. Docker
+
+
+    ### 6. DOckerfile
+
+
+    ### 7. Port
+
+    - docker build -t codyssey-custom:latest .
+    -  docker run --rm -p 8080:8080 codyssey-custom:latest
+    -  curl http://localhost:8080
+
+## 4. 검증 방법 (어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
 
 - docker build 성공
 - curl 응답 200 OK
 - HEALTHCHECK 정상
 
-## 5. 트러블슈팅 2건 이상(문제 → 원인 가설 → 확인 → 해결/대안)
+## 5. 트러블슈팅 2건 이상 (문제 → 원인 가설 → 확인 → 해결/대안)
 
 
-<!-- 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다. -->
+## 6. 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다.
