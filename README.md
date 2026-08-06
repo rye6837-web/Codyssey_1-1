@@ -22,26 +22,66 @@
 
 ## 3. 수행 항목 체크리스트 (터미널/권한/Docker/Dockerfile/포트/Git/GitHub)
 
-    ### 1. Terminal
+### 0. README.MD
+- [v] '`# 가장 큰 제목`'         # 가장 큰 제목
+- [v] '`## 중간 제목`'          ## 중간 제목
+- [v] '`### 소제목`'           ### 소제목
+- [v] '`**굵게**`'            **굵게**  
+- [v] '`*기울임*`'            *기울임*  
+- [v] '`~~취소선~~`'          ~~취소선~~    
+- [v] '`Option + Shift + ↓`' 해당 줄을 아래로 복사
+
+### 1. Terminal
+- [v] 'pwd'                   현재 작업중인 디렉토리 위치 확인
+- [v] 'ls -la'                숨김 파일 포함 목록 확인
+- [v] 'mkdir -p'              작업 디렉토리/폴더 생성
+- [v] 'cd'                    디렉토리 이동
+- [v] 'touch'                 빈 파일 생성
+- [v] 'cp'                    파일 복사
+- [v] 'mv'                    파일 이름 변경 및 이동
+- [v] 'rm' / 'rmdir'          파일 / 디렉토리 삭제
+- [v] 'cat' / 'head' / 'tail' 파일 전체 / 상위 10줄 / 하위 10줄 표시
+
+### 2. Git
+- [v] `git config --global user.name` 및 `user.email` 사용자 정보 설정
+- [v] `git init` 저장소 초기화(최초 설정)
+- [v] `git status` / `git log` 상태 확인
+- [v] `git add` 및 `git commit`을 통한 버전 내역 기록
+- [v] **git 영역 구분**
+    ┌── 1. 작업 디렉토리 (Working Directory)
+    ├── `git add .` (수정된 파일을 스테이징 영역으로 이동)
+    │
+    └── 2. 스테이징 영역 (Staging Area)
+    ├── `git commit -m "커밋 메시지"` (스냅샷을 만들어 로컬 저장소에 저장)
+    │
+    └── 3. 로컬 리포지토리 (Local Repository)
+    ├── `git push` (원격 저장소로 최종 변경사항 업로드)
+    │
+    └── 4. 원격 리포지토리 (Remote Repository / GitHub)
+- ![alt text](images/image.png)
+
+### 3. GitHub
+- [v] GitHub 로그인 및 과제용 원격 저장소(Repository) 생성
+- [v] `git remote add origin <저장소 URL>` 원격 저장소 연동
+- [v] `git push -u origin main` 성공 확인
+- [v] VSCode와 GitHub 계정 연동 상태 확인 (스크린샷 첨부)
+![alt text](images/image2.png)
+- [v] 비밀번호, 토큰 등 민감한 개인정보 마스킹 처리 여부 점검
+
+### 4. 권한 (Permission)
+- [v] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
+- [v] `chmod` 권한 변경 실습
+![alt text](images/image3.png)
+- [v] 
+- [v] 
+
+### 5. Docker
 
 
-    ### 2. Git
+### 6. DOckerfile
 
 
-    ### 3. GitHub
-
-
-    ### 4. 권한
-
-
-    ### 5. Docker
-
-
-    ### 6. DOckerfile
-
-
-    ### 7. Port
-
+### 7. Port
     - docker build -t codyssey-custom:latest .
     -  docker run --rm -p 8080:8080 codyssey-custom:latest
     -  curl http://localhost:8080
