@@ -1,4 +1,5 @@
 # E1-1_내 컴퓨터에서 개발자용 '작업실' 꾸미기
+<!------------------------------------ 구분선 ------------------------------------>
 
 ## 1. 프로젝트 개요 (미션 목표 요약)
 - 개발 워크스테이션은 팀원 누구나 같은 방식으로 실행, 배포, 디버깅할 수 있는 환경 구성을 목표로 한다.
@@ -11,6 +12,7 @@
 - 같은 서비스를 여러 번 실행해도 재현할 수 있는 원리를 익힌다.
 - **해당 경험들을 통해 리눅스 트러블 슈팅, CI/CD 파이프라인, 클라우드 배포/운영 등으로 기술 확장할 수 있다.**
 
+<!------------------------------------ 구분선 ------------------------------------>
 ## 2. 실행 환경 (OS/쉘/터미널, Docker 버전, Git 버전)
 
 - 선택: (B) Linux 베이스 이미지 + 기능 추가
@@ -20,9 +22,10 @@
 - 환경 변수: APP_PORT, APP_MESSAGE
 - Docker HEALTHCHECK 추가
 
-## 3. 수행 항목 체크리스트 (터미널/권한/Docker/Dockerfile/포트/Git/GitHub)
+<!------------------------------------ 구분선 ------------------------------------>
+## 3. 수행 항목 체크리스트 (README.MD/터미널/Git/GitHub/권한/Docker/포트/Dockerfile/DockerCompose)
 
-### 0. README.MD
+### 1. README.MD
 - [v] '`# 가장 큰 제목`'         # 가장 큰 제목
 - [v] '`## 중간 제목`'          ## 중간 제목
 - [v] '`### 소제목`'           ### 소제목
@@ -31,7 +34,7 @@
 - [v] '`~~취소선~~`'          ~~취소선~~    
 - [v] '`Option + Shift + ↓`' 해당 줄을 아래로 복사
 
-### 1. Terminal
+### 2. Terminal
 - [v] `pwd`                   현재 작업중인 디렉토리 위치 확인
 - [v] `ls -la`                숨김 파일 포함 목록 확인
 - [v] `mkdir -p`              작업 디렉토리/폴더 생성
@@ -42,7 +45,7 @@
 - [v] `rm` / `rmdir`          파일 / 디렉토리 삭제
 - [v] `cat` / `head` / `tail` 파일 전체 / 상위 10줄 / 하위 10줄 표시
 
-### 2. Git
+### 3. Git
 - [v] `git config --global user.name` 및 `user.email` 사용자 정보 설정
 - [v] `git init` 저장소 초기화(최초 설정)
 - [v] `git status` / `git log` 상태 확인
@@ -56,7 +59,7 @@
 | 4️⃣ | 원격 리포지토리 | `git push` | GitHub 업로드 |</br>
 - ![alt text](images/image.png)
 
-### 3. GitHub
+### 4. GitHub
 - [v] GitHub 로그인 및 과제용 원격 저장소(Repository) 생성
 - [v] `git remote add origin <저장소 URL>` 원격 저장소 연동
 - [v] `git push -u origin main` 성공 확인
@@ -64,31 +67,92 @@
 ![alt text](images/image2.png)
 - [v] 비밀번호, 토큰 등 민감한 개인정보 마스킹 처리 여부 점검
 
-### 4. 권한 (Permission)
+### 5. 권한 (Permission)
 - [v] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
-- [v] `chmod` 권한 변경 실습
 ![alt text](images/image3.png)
-- [v] 
-- [v] 
+- [v] `chmod` 권한 변경 실습
+![alt text](images/image4.png)
+- [v] 권한 표기법(755, 644 등)의 숫자별 의미 정리
+    - r (read)    = 4
+    - w (write)   = 2
+    - x (execute) = 1
+    - (ex) 755 = 소유자 모든 권한 / 그룹 및 기타 사용자 쓰기 제한. 읽기, 실행 가능
 
-### 5. Docker
-
-
-### 6. DOckerfile
-
+### 6. Docker
+- [v] `docker --version`으로 설치 버전 확인
+- [v] `docker info` 명령어로 Docker 데몬(또는 OrbStack) 동작 상태 점검
+- [v] `docker pull` 및 `docker images`로 이미지 다운로드 및 목록 확인
+- [v] `docker ps` 및 `docker ps -a`로 실행 중/종료된 컨테이너 목록 확인
+- [v] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
+- [v] `docker run -d --name myubuntu ubuntu sleep infinity` 실행, 대화형 컨테이너 진입 및 명령어 실습
+- [v] `docker exec -it myubuntu bash` 추가로 우분투에 접속 및 나가더라도 컨테이너는 종료되지 않음.
+- [v] `docker logs` 및 `docker stats`로 로그 및 리소스 사용량 점검
+- [v] Docker 볼륨 생성 및 컨테이너 삭제 전/후 데이터 영속성 검증
+    - `docker volume create myvol` 도커 볼륨 생성
+    - `docker volume ls` 도커 볼륨 리스트 확인
+    - `docker run -it --name vol-test -v myvol:/data ubuntu bash` 볼륨을 마운트한 컨테이너 실행
+    - `docker run --rm -v myvol:/data ubuntu ls -l /data` 볼륨안의 저장된 데이터 확인
 
 ### 7. Port
-    - docker build -t codyssey-custom:latest .
-    -  docker run --rm -p 8080:8080 codyssey-custom:latest
-    -  curl http://localhost:8080
+- [v] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
 
+### 8. Dockerfile
+- [v] 웹 서버 생성을 위한 베이스 이미지 선정 (예: NGINX / Alpine)
+- [v] 커스텀 포인트(환경변수 `ENV`, 콘텐츠 복사 `COPY` 등) 적용하여 Dockerfile 작성
+- [v] `docker build -t <이미지명>:<태그> .` 커스텀 이미지 빌드 성공
+- [v] 빌드된 커스텀 이미지를 기반으로 컨테이너 정상 구동 확인
+
+### 9. Docker-Compose
+- [v] Dockerfile 이란?
+    - Dockerfile은 Docker 이미지를 만들기 위한 설계서입니다. 어떤 베이스 이미지를 쓸지, 어떤 파일을 복사할지, 어떤 명령을 실행할지 적습니다.
+- [v] Dockerfile 기본 흐름
+    - FROM ubuntu:latest (*첫 줄 주의!* 주석은 FROM 지시어보다 먼저올 수 없음! 항상 FROM 먼저.)
+    - WORKDIR /app
+    - COPY . .
+    - RUN apt update
+    - CMD ["bash"] (해당 컨테이너를 실행할 때 먼저 실행할 앱)
+
+### 10. Example for Docker-compose Folder Tree 
+my-project/
+├── docker-compose.yml
+├── .env
+├── .gitignore
+├── README.md
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── requirements.txt          # Python 예시
+│   ├── package.json              # Node 예시라면 사용
+│   ├── src/
+│   │   ├── main.py               # 또는 app.py / server.js
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── models/
+│   └── tests/
+│
+├── nginx/
+│   ├── default.conf
+│   └── Dockerfile                # 선택사항(공식 이미지 그대로 쓰면 없어도 됨)
+│
+├── db/
+│   ├── init/
+│   │   └── init.sql
+│   └── data/                     # 로컬 개발용, 보통 git에는 제외
+│
+└── logs/
+    ├── nginx/
+    └── backend/
+    
+<!------------------------------------ 구분선 ------------------------------------>
 ## 4. 검증 방법 (어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
 
 - docker build 성공
 - curl 응답 200 OK
 - HEALTHCHECK 정상
 
+<!------------------------------------ 구분선 ------------------------------------>
 ## 5. 트러블슈팅 2건 이상 (문제 → 원인 가설 → 확인 → 해결/대안)
 
-
+<!------------------------------------ 구분선 ------------------------------------>
 ## 6. 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다.
