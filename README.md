@@ -113,6 +113,7 @@
     - CMD ["bash"] (해당 컨테이너를 실행할 때 먼저 실행할 앱)
 
 ### 10. Example for Docker-compose Folder Tree 
+```
 my-project/
 ├── docker-compose.yml
 ├── .env
@@ -143,7 +144,8 @@ my-project/
 └── logs/
     ├── nginx/
     └── backend/
-    
+```
+
 <!------------------------------------ 구분선 ------------------------------------>
 ## 4. 검증 방법 (어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
 
