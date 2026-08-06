@@ -55,8 +55,8 @@
 ├── `git commit -m "커밋 메시지"` (스냅샷을 만들어 로컬 저장소에 저장)<br/>
 │<br/>
 └── 3. 로컬 리포지토리 (Local Repository)<br/>
-├── `git push` (원격 저장소로 최종 변경사항 업로드)<br/>
-│<br/>
+├── `git push` (원격 저장소로 최종 변경사항 업로드)
+│
 └── 4. 원격 리포지토리 (Remote Repository / GitHub)
 - ![alt text](images/image.png)
 
