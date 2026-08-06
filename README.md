@@ -48,16 +48,16 @@
 - [v] `git status` / `git log` 상태 확인
 - [v] `git add` 및 `git commit`을 통한 버전 내역 기록
 - [v] **git 영역 구분**<br/>
-    ┌── 1. 작업 디렉토리 (Working Directory)<br/>
-     ├── `git add .` (수정된 파일을 스테이징 영역으로 이동)<br/>
-     │<br/>
-    └── 2. 스테이징 영역 (Staging Area)<br/>
-    ├── `git commit -m "커밋 메시지"` (스냅샷을 만들어 로컬 저장소에 저장)<br/>
-     │<br/>
-    └── 3. 로컬 리포지토리 (Local Repository)<br/>
-    ├── `git push` (원격 저장소로 최종 변경사항 업로드)<br/>
-     │<br/>
-    └── 4. 원격 리포지토리 (Remote Repository / GitHub)
+┌── 1. 작업 디렉토리 (Working Directory)<br/>
+├── `git add .` (수정된 파일을 스테이징 영역으로 이동)<br/>
+│<br/>
+└── 2. 스테이징 영역 (Staging Area)<br/>
+├── `git commit -m "커밋 메시지"` (스냅샷을 만들어 로컬 저장소에 저장)<br/>
+│<br/>
+└── 3. 로컬 리포지토리 (Local Repository)<br/>
+├── `git push` (원격 저장소로 최종 변경사항 업로드)<br/>
+│<br/>
+└── 4. 원격 리포지토리 (Remote Repository / GitHub)
 - ![alt text](images/image.png)
 
 ### 3. GitHub
