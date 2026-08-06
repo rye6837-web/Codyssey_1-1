@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .                    # docker build -t codyssey-web:1.0 .
+    image: codyssey-web:1.0     # 이미지 이름:태그 지정
+    container_name: my-web-server  # --name my-web-server
+    ports:
+      - "8080:80"               # -p 8080:80
+    restart: always             # 컨테이너 자동 재시작 (선택사항)
