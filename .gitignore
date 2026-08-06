@@ -1,0 +1,22 @@
+# --- 보안 ---
+.env
+
+# --- 파이썬 관련 ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# --- 가상환경 ---
+venv/
+.venv/
+env/
+
+# --- 에디터 ---
+.vscode/
+.idea/
+
+# --- 운영체제 ---
+.DS_Store
+Thumbs.db
