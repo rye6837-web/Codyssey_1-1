@@ -51,6 +51,13 @@
 - [v] `git status` / `git log` 상태 확인
 - [v] `git add` 및 `git commit`을 통한 버전 내역 기록
 - [v] **git 영역 구분**<br/>
+| 단계 | 영역 | 명령어 | 설명 |
+| :---: | :--- | :--- | :--- |
+| 1️⃣ | 작업 디렉토리 (Working Directory) | - | 파일 수정 |
+| 2️⃣ | 스테이징 영역 (Staging Area) | `git add .` | 변경사항 준비 |
+| 3️⃣ | 로컬 리포지토리 (Local Repository) | `git commit -m "메시지"` | 스냅샷 저장 |
+| 4️⃣ | 원격 리포지토리 (Remote Repository) | `git push` | GitHub 업로드 |
+
 ```
 | 단계 | 영역 | 명령어 | 설명 |</br>
 |------|------|--------|------|</br>
