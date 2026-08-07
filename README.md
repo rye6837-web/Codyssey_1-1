@@ -26,31 +26,31 @@
 ## 3. 수행 항목 체크리스트 (README.MD/터미널/Git/GitHub/권한/Docker/포트/Dockerfile/DockerCompose)
 
 ### 1. README.MD
-- [v] '`# 가장 큰 제목`'         # 가장 큰 제목
-- [v] '`## 중간 제목`'          ## 중간 제목
-- [v] '`### 소제목`'           ### 소제목
-- [v] '`**굵게**`'            **굵게**  
-- [v] '`*기울임*`'            *기울임*  
-- [v] '`~~취소선~~`'          ~~취소선~~    
-- [v] '`Option + Shift + ↓`' 해당 줄을 아래로 복사
+- [x] '`# 가장 큰 제목`'         # 가장 큰 제목
+- [x] '`## 중간 제목`'          ## 중간 제목
+- [x] '`### 소제목`'           ### 소제목
+- [x] '`**굵게**`'            **굵게**  
+- [x] '`*기울임*`'            *기울임*  
+- [x] '`~~취소선~~`'          ~~취소선~~    
+- [x] '`Option + Shift + ↓`' 해당 줄을 아래로 복사
 
 ### 2. Terminal
-- [v] `pwd`                   현재 작업중인 디렉토리 위치 확인
-- [v] `ls -la`                숨김 파일 포함 목록 확인
-- [v] `mkdir -p`              작업 디렉토리/폴더 생성
-- [v] `cd`                    디렉토리 이동
-- [v] `touch`                 빈 파일 생성
-- [v] `cp`                    파일 복사
-- [v] `mv`                    파일 이름 변경 및 이동
-- [v] `rm` / `rmdir`          파일 / 디렉토리 삭제
-- [v] `cat` / `head` / `tail` 파일 전체 / 상위 10줄 / 하위 10줄 표시
+- [x] `pwd`                   현재 작업중인 디렉토리 위치 확인
+- [x] `ls -la`                숨김 파일 포함 목록 확인
+- [x] `mkdir -p`              작업 디렉토리/폴더 생성
+- [x] `cd`                    디렉토리 이동
+- [x] `touch`                 빈 파일 생성
+- [x] `cp`                    파일 복사
+- [x] `mv`                    파일 이름 변경 및 이동
+- [x] `rm` / `rmdir`          파일 / 디렉토리 삭제
+- [x] `cat` / `head` / `tail` 파일 전체 / 상위 10줄 / 하위 10줄 표시
 
 ### 3. Git
-- [v] `git config --global user.name` 및 `user.email` 사용자 정보 설정
-- [v] `git init` 저장소 초기화(최초 설정)
-- [v] `git status` / `git log` 상태 확인
-- [v] `git add` 및 `git commit`을 통한 버전 내역 기록
-- [v] **git 영역 구분**<br/>
+- [x] `git config --global user.name` 및 `user.email` 사용자 정보 설정
+- [x] `git init` 저장소 초기화(최초 설정)
+- [x] `git status` / `git log` 상태 확인
+- [x] `git add` 및 `git commit`을 통한 버전 내역 기록
+- [x] **git 영역 구분**<br/>
 
 | 단계 | 영역 | 명령어 | 설명 |
 | :---: | :--- | :--- | :--- |
@@ -60,52 +60,52 @@
 | 4️⃣ | 원격 리포지토리 (Remote Repository) | `git push` | GitHub 업로드 |
 
 ### 4. GitHub
-- [v] GitHub 로그인 및 과제용 원격 저장소(Repository) 생성
-- [v] `git remote add origin <저장소 URL>` 원격 저장소 연동
-- [v] `git push -u origin main` 성공 확인
-- [v] VSCode와 GitHub 계정 연동 상태 확인 (스크린샷 첨부)
+- [x] GitHub 로그인 및 과제용 원격 저장소(Repository) 생성
+- [x] `git remote add origin <저장소 URL>` 원격 저장소 연동
+- [x] `git push -u origin main` 성공 확인
+- [x] VSCode와 GitHub 계정 연동 상태 확인 (스크린샷 첨부)
 ![alt text](docs/images/image2.png)
-- [v] 비밀번호, 토큰 등 민감한 개인정보 마스킹 처리 여부 점검
+- [x] 비밀번호, 토큰 등 민감한 개인정보 마스킹 처리 여부 점검
 
 ### 5. 권한 (Permission)
-- [v] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
+- [x] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
 ![alt text](docs/images/image3.png)
-- [v] `chmod : chmod 755 [디렉터리명]` 권한 변경 실습
+- [x] `chmod : chmod 755 [디렉터리명]` 권한 변경 실습
 ![alt text](docs/images/image4.png)
-- [v] 권한 표기법(755, 644 등)의 숫자별 의미 정리
+- [x] 권한 표기법(755, 644 등)의 숫자별 의미 정리
     - r (read)    = 4
     - w (write)   = 2
     - x (execute) = 1
     - (ex) 755 = 소유자 모든 권한 / 그룹 및 기타 사용자 쓰기 제한. 읽기, 실행 가능
 
 ### 6. Docker
-- [v] `docker --version`으로 설치 버전 확인
-- [v] `docker info` 명령어로 Docker 데몬(또는 OrbStack) 동작 상태 점검
-- [v] `docker pull` 및 `docker images`로 이미지 다운로드 및 목록 확인
-- [v] `docker ps` 및 `docker ps -a`로 실행 중/종료된 컨테이너 목록 확인
-- [v] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
-- [v] `docker run -d --name myubuntu ubuntu sleep infinity` 실행, 대화형 컨테이너 진입 및 명령어 실습
-- [v] `docker exec -it myubuntu bash` 추가로 우분투에 접속 및 나가더라도 컨테이너는 종료되지 않음.
-- [v] `docker logs` 및 `docker stats`로 로그 및 리소스 사용량 점검
-- [v] Docker 볼륨 생성 및 컨테이너 삭제 전/후 데이터 영속성 검증
+- [x] `docker --version`으로 설치 버전 확인
+- [x] `docker info` 명령어로 Docker 데몬(또는 OrbStack) 동작 상태 점검
+- [x] `docker pull` 및 `docker images`로 이미지 다운로드 및 목록 확인
+- [x] `docker ps` 및 `docker ps -a`로 실행 중/종료된 컨테이너 목록 확인
+- [x] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
+- [x] `docker run -d --name myubuntu ubuntu sleep infinity` 실행, 대화형 컨테이너 진입 및 명령어 실습
+- [x] `docker exec -it myubuntu bash` 추가로 우분투에 접속 및 나가더라도 컨테이너는 종료되지 않음.
+- [x] `docker logs` 및 `docker stats`로 로그 및 리소스 사용량 점검
+- [x] Docker 볼륨 생성 및 컨테이너 삭제 전/후 데이터 영속성 검증
     - `docker volume create myvol` 도커 볼륨 생성
     - `docker volume ls` 도커 볼륨 리스트 확인
     - `docker run -it --name vol-test -v myvol:/data ubuntu bash` 볼륨을 마운트한 컨테이너 실행
     - `docker run --rm -v myvol:/data ubuntu ls -l /data` 볼륨안의 저장된 데이터 확인
 
 ### 7. Port
-- [v] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
+- [x] `docker run -d -p 80:80 --name nginx_latest --restart unless-stopped nginx` 실행 성공 로그 확인
 
 ### 8. Dockerfile
-- [v] 웹 서버 생성을 위한 베이스 이미지 선정 (예: NGINX / Alpine)
-- [v] 커스텀 포인트(환경변수 `ENV`, 콘텐츠 복사 `COPY` 등) 적용하여 Dockerfile 작성
-- [v] `docker build -t <이미지명>:<태그> .` 커스텀 이미지 빌드 성공
-- [v] 빌드된 커스텀 이미지를 기반으로 컨테이너 정상 구동 확인
+- [x] 웹 서버 생성을 위한 베이스 이미지 선정 (예: NGINX / Alpine)
+- [x] 커스텀 포인트(환경변수 `ENV`, 콘텐츠 복사 `COPY` 등) 적용하여 Dockerfile 작성
+- [x] `docker build -t <이미지명>:<태그> .` 커스텀 이미지 빌드 성공
+- [x] 빌드된 커스텀 이미지를 기반으로 컨테이너 정상 구동 확인
 
 ### 9. Docker-Compose
-- [v] Dockerfile 이란?
+- [x] Dockerfile 이란?
     - Dockerfile은 Docker 이미지를 만들기 위한 설계서입니다. 어떤 베이스 이미지를 쓸지, 어떤 파일을 복사할지, 어떤 명령을 실행할지 적습니다.
-- [v] Dockerfile 기본 흐름
+- [x] Dockerfile 기본 흐름
     - FROM ubuntu:latest (*첫 줄 주의!* 주석은 FROM 지시어보다 먼저올 수 없음! 항상 FROM 먼저.)
     - WORKDIR /app
     - COPY . .
