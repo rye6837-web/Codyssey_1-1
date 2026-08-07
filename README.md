@@ -17,7 +17,7 @@
 ## 2. 실행 환경 (OS/쉘/터미널, Docker 버전, Git 버전)
 
 - OS : mac OS
-- Shell : bash
+- Shell :  git bash
 - Docker : Docker version 28.5.2
 - Git : git version 2.53.0
 
@@ -70,7 +70,7 @@
 ### 5. 권한 (Permission)
 - [v] `ls -l` 명령어로 파일 및 디렉토리의 현재 권한(r/w/x) 확인
 ![alt text](docs/images/image3.png)
-- [v] `chmod` 권한 변경 실습
+- [v] `chmod : chmod 755 [디렉터리명]` 권한 변경 실습
 ![alt text](docs/images/image4.png)
 - [v] 권한 표기법(755, 644 등)의 숫자별 의미 정리
     - r (read)    = 4
@@ -136,18 +136,51 @@ c6r3s4:Codyssey_1-1 rye68377432$ pwd
 
 ### 2. `ls -la`
 ```
+total 64
+drwxr-xr-x  10 rye68377432  rye68377432   320  8  6 17:20 .
+drwx------+  9 rye68377432  rye68377432   288  8  6 15:02 ..
+-rw-r--r--@  1 rye68377432  rye68377432  8196  8  7 13:52 .DS_Store
+drwxr-xr-x  15 rye68377432  rye68377432   480  8  6 17:47 .git
+-rw-r--r--   1 rye68377432  rye68377432   208  8  6 17:16 .gitignore
+drwxr-xr-x   3 rye68377432  rye68377432    96  8  6 17:08 app
+-rw-r--r--   1 rye68377432  rye68377432   356  8  6 17:23 Docker-compose.yml
+-rwxr-xr-x   1 rye68377432  rye68377432   111  8  6 17:23 Dockerfile
+drwxr-xr-x   3 rye68377432  rye68377432    96  8  6 17:09 docs
+-rw-r--r--   1 rye68377432  rye68377432  7638  8  7 13:54 README.md
 ```
 
-### 3. 
+### 3. git status
 ```
+rye68377432@c6r3s4 Codyssey_1-1 % git status
+현재 브랜치 main
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+
+커밋하도록 정하지 않은 변경 사항:
+  (무엇을 커밋할지 바꾸려면 "git add <파일>..."을 사용하십시오)
+  (use "git restore <file>..." to discard changes in working directory)
+        수정함:        README.md
+
+커밋할 변경 사항을 추가하지 않았습니다 ("git add" 및/또는 "git commit -a"를
+사용하십시오)
 ```
 
-### 4. 
+### 4. git log
 ```
+rye68377432@c6r3s4 Codyssey_1-1 % git log
+commit 14391c97fe0a9f1122277500e8960e14ab70f0a4 (HEAD -> main, origin/main, origin/HEAD)
+Author: namsup <rye6837@gmail.com>
+Date:   Thu Aug 6 17:47:57 2026 +0900
+
+    git commit_14
+
+commit ad483aae84a8f9fb79f93d00366c91d07c19cf73
+Author: namsup <rye6837@gmail.com>
+Date:   Thu Aug 6 17:44:42 2026 +0900
 ```
 
 ### 5. 
 ```
+
 ```
 
 ### 6. 
