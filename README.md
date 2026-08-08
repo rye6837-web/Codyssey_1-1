@@ -178,34 +178,97 @@ Author: namsup <rye6837@gmail.com>
 Date:   Thu Aug 6 17:44:42 2026 +0900
 ```
 
-### 5. 
+### 5. 파일 및 디렉토리 조작 실습 (`mkdir`, `touch`, `cp`, `mv`, `rm`, `cat`)
+```bash
+# 1. 디렉토리 생성 및 이동
+$ mkdir -p practice && cd practice
+
+# 2. 파일 생성 및 내용 확인
+$ touch test.txt
+$ echo "Hello, Codyssey!" > test.txt
+$ cat test.txt
+Hello, Codyssey!
+
+# 3. 파일 복사 및 이름 변경
+$ cp test.txt copy.txt
+$ mv copy.txt renamed.txt
+
+# 4. 파일 삭제 및 목록 확인
+$ rm test.txt
+$ ls -la
 ```
 
+### 6. 권한 확인 및 변경 실습 (`chmod 755`, `chmod 644`)
+```bash
+# 디렉토리 및 파일 권한 변경 전/후 확인
+$ ls -l
+$ chmod 755 practice
+$ chmod 644 practice/renamed.txt
+$ ls -l practice
 ```
 
-### 6. 
-```
+### 7. Docker 설치 및 데몬 점검 (`docker --version`, `docker info`)
+```bash
+$ docker --version
+Docker version 28.5.2
+
+$ docker info
 ```
 
-### 7. 
-```
-```
-
-### 8. 
-```
-```
-
-### 9. 
-```
+### 8. Docker 기본 컨테이너 운영 (`hello-world`, `ubuntu`, `logs`, `stats`)
+```bash
+$ docker run hello-world
+$ docker run -d --name myubuntu ubuntu sleep infinity
+$ docker ps -a
+$ docker exec -it myubuntu bash -c "ls -la"
+$ docker logs myubuntu
+$ docker stats --no-stream
 ```
 
-### 10. 
-```
+### 9. Dockerfile 빌드 및 포트 매핑 실행 (`docker build`, `docker run`)
+```bash
+$ docker build -t my-custom-nginx:1.0 .
+$ docker run -d -p 8080:80 --name web-test my-custom-nginx:1.0
+$ docker ps
+$ curl http://localhost:8080
 ```
 
-### 11. 
+### 10. Docker 볼륨 영속성 검증 (`docker volume`, 데이터 유지 확인)
+```bash
+# 1. 볼륨 생성
+$ docker volume create myvol
+$ docker volume ls
+
+# 2. 볼륨 마운트 후 데이터 생성
+$ docker run -d --name vol-test -v myvol:/data ubuntu sleep infinity
+$ docker exec -it vol-test bash -c "echo 'Persistence OK' > /data/test.txt && cat /data/test.txt"
+Persistence OK
+
+# 3. 컨테이너 삭제
+$ docker rm -f vol-test
+
+# 4. 새 컨테이너에서 데이터 유지 검증
+$ docker run -d --name vol-test2 -v myvol:/data ubuntu sleep infinity
+$ docker exec -it vol-test2 bash -c "cat /data/test.txt"
+Persistence OK
 ```
+
+### 11. Git 설정 점검 (`git config --list`)
+```bash
+$ git config --list
 ```
 
 <!------------------------------------ 구분선 ------------------------------------>
 ## 5. 트러블슈팅 2건 이상 (문제 → 원인 가설 → 확인 → 해결/대안)
+
+### 트러블슈팅 1: [이슈 제목 예: OrbStack/Docker 데몬 미실행 오류]
+- **문제 상황**: `docker ps` 명령어 실행 시 데몬에 연결할 수 없다는 오류(`Cannot connect to the Docker daemon`) 발생.
+- **원인 가설**: OrbStack 또는 Docker 백그라운드 엔진이 실행되지 않았거나 소켓 권한이 없을 것으로 예상.
+- **원인 확인**: 프로세스 목록 및 OrbStack 상태를 확인한 결과, 애플리케이션이 시작되지 않은 상태였음.
+- **해결/대안**: OrbStack 애플리케이션을 실행하여 Docker 백그라운드 엔진을 구동한 뒤 정상 동작 확인.
+
+### 트러블슈팅 2: [이슈 제목 예: 포트 80 충돌로 인한 컨테이너 실행 실패]
+- **문제 상황**: `docker run -p 80:80 nginx` 실행 시 `port is already allocated` 오류 발생.
+- **원인 가설**: 로컬 macOS 시스템 또는 다른 프로세스가 이미 80번 포트를 선점하고 있을 것으로 예상.
+- **원인 확인**: `lsof -i :80` 명령어로 점검하여 기존 서비스가 80번 포트를 점유하고 있음을 확인.
+- **해결/대안**: 호스트 포트를 `8080`으로 변경하여 `-p 8080:80` 매핑으로 컨테이너를 정상 구동함.
